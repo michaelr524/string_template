@@ -2,6 +2,15 @@
 name = "string_template"
 version = "0.1.0"
 authors = ["Michael Ravits <michael@xlucidity.com>"]
+license = "MIT/Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/michaelr524/string_template"
+homepage = "https://github.com/michaelr524/string_template"
+description = """
+Very simple string template for Rust.
+"""
+categories = ["template-engine", "text-processing"]
+keywords = ["template"]
 
 [dependencies]
 regex = "1"
