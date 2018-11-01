@@ -1,0 +1,7 @@
+[package]
+name = "string_template"
+version = "0.1.0"
+authors = ["Michael Ravits <michael@xlucidity.com>"]
+
+[dependencies]
+regex = "1"
