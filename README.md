@@ -22,22 +22,23 @@ Here's a simple example:
 extern crate string_template;
 
 use string_template::Template;
+use std::collections::HashMap;
 
 fn main() {
-        let template = Template::new("Hi, my name is {{name}} and I'm a {{lang}} developer.");
-            
-        let mut args = HashMap::new();
-        args.insert("name", "Michael");
-        args.insert("lang", "Rust");
-        let s = template.render(&args);
+    let template = Template::new("Hi, my name is {{name}} and I'm a {{lang}} developer.");
 
-        assert_eq!(s, "Hi, my name is Michael and I'm a Rust developer.");
+    let mut args = HashMap::new();
+    args.insert("name", "Michael");
+    args.insert("lang", "Rust");
+    let s = template.render(&args);
 
-        let mut args1 = HashMap::new();
-        args1.insert("name", "Vader");
-        args1.insert("lang", "Dart");
-        let s2 = template.render(&args1);
+    assert_eq!(s, "Hi, my name is Michael and I'm a Rust developer.");
 
-        assert_eq!(s2, "Hi, my name is Vader and I'm a Dart developer.");
+    let mut args1 = HashMap::new();
+    args1.insert("name", "Vader");
+    args1.insert("lang", "Dart");
+    let s2 = template.render(&args1);
+
+    assert_eq!(s2, "Hi, my name is Vader and I'm a Dart developer.");
 }
 ```

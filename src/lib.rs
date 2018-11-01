@@ -3,7 +3,7 @@ extern crate regex;
 use regex::Regex;
 use std::collections::HashMap;
 
-struct Template {
+pub struct Template {
     src: String,
     matches: Vec<(usize, usize)>,
 }
