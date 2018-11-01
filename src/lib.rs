@@ -28,7 +28,7 @@ impl Template {
         // get index of first arg match or return a copy of the template if no args matched
         let first = match self.matches.first() {
             Some((start, _)) => *start,
-            _ => return template_str.clone()
+            _ => return template_str.clone(),
         };
 
         // copy from template start to first arg
@@ -48,13 +48,13 @@ impl Template {
             // argument name with braces
             let arg = &template_str[*start..*end];
             // just the argument name
-            let arg_name = &arg[2..arg.len()-2];
+            let arg_name = &arg[2..arg.len() - 2];
 
             // if value passed for argument then append it, otherwise append original argument
             // name with braces
             match m.get(arg_name) {
                 Some(s) => parts.push(s),
-                _ => parts.push(arg)
+                _ => parts.push(arg),
             }
 
             prev_end = Some(*end);
@@ -73,16 +73,14 @@ impl Template {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
-    fn it_works()
-    {
-        let template =
-            Template::new("Hi, my name is {{name}} and I'm a {{lang}} developer.");
+    fn it_works() {
+        let template = Template::new("Hi, my name is {{name}} and I'm a {{lang}} developer.");
+
         let mut args = HashMap::new();
         args.insert("name", "Michael");
         args.insert("lang", "Rust");
